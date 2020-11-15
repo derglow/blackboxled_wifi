@@ -1,0 +1,61 @@
+esphome:
+  name: reeflight_1
+  platform: ESP8266
+  board: nodemcu
+
+wifi:
+  ssid: "YourWifi"
+  password: "YourWifiPass"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Reeflight 1 Fallback Hotspot"
+    password: "Password"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+power_supply:
+  - id: 'power_supply_white'
+    pin: 
+      number: D8
+      inverted: true
+    keep_on_time: 
+      milliseconds: 100
+  - id: 'power_supply_blue'
+    pin: 
+      number: D6
+      inverted: true
+    keep_on_time: 
+      milliseconds: 100
+
+output:
+  - platform: esp8266_pwm
+    pin: D7
+    power_supply: power_supply_white
+    frequency: 1000 Hz
+    id: pwm_white
+  - platform: esp8266_pwm
+    pin: D5
+    power_supply: power_supply_blue
+    frequency: 1000 Hz
+    id: pwm_blue
+
+light:
+  - platform: monochromatic
+    output: pwm_white
+    name: "Reef Light 1 White"
+    gamma_correct: 1
+    default_transition_length: 5s
+  - platform: monochromatic
+    output: pwm_blue
+    name: "Reef Light 1 Blue"
+    gamma_correct: 1
+    default_transition_length: 5s
