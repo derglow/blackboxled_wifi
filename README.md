@@ -5,7 +5,7 @@ The PCB serves two functions...
 1) Connect 3.3V digital output to transistor to toggle lights on/off
 2) Convert 3.3V PWM into a 0-10V analog output
 
-![Alt text](blackboxled_wifi/PCB_populated.jpg?raw=true "Title")
+![Populated PCB](PCB_populated.jpg?raw=true "Populated PCB")
 
 Parts list:
 1) NodeMCU - $4
