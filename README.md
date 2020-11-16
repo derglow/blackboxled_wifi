@@ -11,7 +11,8 @@ Parts list:
 1) NodeMCU - $4
 2) 12V Power Supply - $5
 3) PCB - $4
-Total Cost - $13
+
+Rough Cost - $13 + a few bucks for components
 
 Link to order the PCBs ($11 for 3):
 https://oshpark.com/shared_projects/AcYhgbWN
